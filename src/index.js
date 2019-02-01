@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import Chuck from './chucknorris';
+import Redux from './redux';
 
 
 class Resp extends React.Component{
@@ -27,17 +29,21 @@ class Game extends React.Component {
   }
 
 
+
   render() {
     const { hits } = this.state;
+    const { joke } = this.state;
+
+    console.log(joke);
 
     return (
-      <ul>
-        {hits.map(hit =>
-          <li key={hit.objectID}>
-            <a href={hit.url}>{hit.title}</a>
-          </li>
-        )}
-      </ul>
+      <div>
+        <Chuck />
+
+        <div class="docdiv">
+          <Redux />
+        </div>
+      </div>
     );
   }
 }
